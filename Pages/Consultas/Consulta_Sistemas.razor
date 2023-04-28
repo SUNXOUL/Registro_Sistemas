@@ -1,5 +1,5 @@
 @page "/Consulta"
-@inject SistemaBLL Sistemas
+@inject SistemaBLL SistemasBLL
 
 <div class="container mt-3">           
   <table class="table  table-striped">
@@ -11,7 +11,7 @@
       </tr>
     </thead>
     <tbody>
-    @foreach(var item in Sistemas.GetList())
+    @foreach(var item in SistemasBLL.GetList())
     {
       <tr>
         <td>@item.SistemaId</td>

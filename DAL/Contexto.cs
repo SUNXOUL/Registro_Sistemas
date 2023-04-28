@@ -13,6 +13,6 @@ namespace RegistroSistemas.DAL
         // creamos el constructor para el contexto 
         public Contexto(DbContextOptions<Contexto> Options) : base(Options) { }
         //Agregamos la tabla de Sistemas  al contexto
-        public DbSet<Sistema> Sistemas { get; set; }
+        public DbSet<Sistemas> Sistemas { get; set; }
     }
 }

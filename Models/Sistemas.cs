@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 namespace RegistroSistemas.Models
 {
-    public class Sistema
+    public class Sistemas
     {
         //Indicamos que el atributo sera llave primaria con ayuda de las DataAnnotations
         [Key]
