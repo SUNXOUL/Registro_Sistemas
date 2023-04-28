@@ -54,18 +54,13 @@
         if(Sistema.Nombre!=null)
         {
             SistemasBLL.Guardar(this.Sistema);
-            ShowNotification(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = "Registro Actualizado", Detail = "Guardado con Exito", Duration = 4000 });
+                    notificationService.ShowNotification( "Actualizacion de Registro", "Agregado con Exito",NotificationSeverity.Success);
             Nuevo();
         }
         else
         {
-            ShowNotification(new NotificationMessage { Severity = NotificationSeverity.Error, Summary = "Error de Registro", Detail = "Nombre es un campo Requerido", Duration = 4000 });
+            notificationService.ShowNotification( "Error de Registro", "Nombre es un campo Requerido",NotificationSeverity.Error);
         }
-    }
-
-    void ShowNotification(NotificationMessage message)
-    {
-        notificationService.Notify(message);
     }
 
     public void Nuevo()
@@ -82,8 +77,7 @@
         }
         else
         {
-            ShowNotification(new NotificationMessage { Severity = NotificationSeverity.Error, Summary = "Error de Busqueda", Detail = "Registro no encontrado", Duration = 4000 });
-
+            notificationService.ShowNotification( "Error de Busqueda", "Registro no encontrado",NotificationSeverity.Error);
         }
     }
         
@@ -91,7 +85,7 @@
     {
         Buscar();
         SistemasBLL.Eliminar(this.Sistema);
-        ShowNotification(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = "Actualizacion de Registro", Detail = "Eliminado con Exito", Duration = 4000 });
+        notificationService.ShowNotification( "Actualizacion de Registro", "Eliminado con Exito",NotificationSeverity.Success);
 
         Nuevo();
     }
