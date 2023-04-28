@@ -1,0 +1,22 @@
+@page "/Consulta"
+@inject SistemaBLL Sistemas
+
+<div class="container mt-3">           
+  <table class="table  table-striped">
+    <thead>
+      <tr>
+        <th>Sistema Id</th>
+        <th>Nombre</th>
+      </tr>
+    </thead>
+    <tbody>
+    @foreach(var item in Sistemas.GetList())
+    {
+      <tr>
+        <td>@item.SistemaId</td>
+        <td>@item.Nombre</td>
+      </tr>
+    }
+    </tbody>
+  </table>
+</div>
